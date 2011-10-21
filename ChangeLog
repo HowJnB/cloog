@@ -1,3 +1,12 @@
+version: 0.17.0
+date: Fri Oct 21
+changes:
+	- update isl backend to changes in isl 0.08
+	- Add CLOOG_ prefix to LANGUAGE defines in public header files
+	- Replace cloog_union_domain_from_isl_union_set() with
+	  cloog_union_domain_from_isl_set()
+	- Smaller improvements
+
 version: 0.16.3
 date: Wed Jul 13 18:18:19 CEST 2011
 changes:
