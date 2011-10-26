@@ -1,0 +1,35 @@
+The following steps are necessary to create a release:
+
+We use version 0.16.3 as an example:
+
+- Add important changes since last release to 'ChangeLog' file
+- Update configure.ac
+	- Set CLooG version number in
+		m4_define([version_major], [0])
+		m4_define([version_minor], [16])
+		m4_define([version_revision], [3])
+	- Set library version in
+		versioninfo=2:0:0
+
+- Commit those changes to git with the commit message 'CLooG 0.16.3'
+  git commit -asm "CLooG 0.16.3"
+
+  git log HEAD^..HEAD
+	commit 225c2ed62fe37a4db22bf4b95c3731dab1a50dde
+	Author: Sven Verdoolaege <skimo@kotnet.org>
+	Date:   Sun Jul 10 09:27:24 2011 +0200
+
+	    CLooG 0.16.3
+
+	    Signed-off-by: Sven Verdoolaege <skimo@kotnet.org>
+
+- Tag the new commit
+  git tag cloog-0.16.3
+
+- Push changes out to CLooG repo
+  git push origin master
+  git push origin cloog-0.16.3
+
+- Create new cloog tarball
+  ./create_tarball.sh cloog-0.16.3
+
